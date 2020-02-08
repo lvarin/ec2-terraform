@@ -1,5 +1,5 @@
-resource "aws_instance" "SSH" {
-  ami           = data.aws_ami.latest_centos.id
+resource "aws_instance" "ssh" {
+  ami           = data.aws_ami.ami.id
   instance_type = var.instance_type
   key_name = "ssh_user"
 

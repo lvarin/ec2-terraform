@@ -1,18 +1,20 @@
 # Get the latest ECS AMI
-data "aws_ami" "latest_centos" {
-  most_recent = true
+data "aws_ami" "ami" {
+owners      = ["679593333241"]
+most_recent = true
 
   filter {
-    name   = "name"
-    values = ["CentOS 7*"]
+      name   = "name"
+      values = ["CentOS Linux 7 x86_64 HVM EBS *"]
   }
 
   filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
+      name   = "architecture"
+      values = ["x86_64"]
   }
 
-  owners = ["aws-marketplace"]
+  filter {
+      name   = "root-device-type"
+      values = ["ebs"]
+  }
 }
-
-

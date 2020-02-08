@@ -11,7 +11,7 @@ resource "aws_route53_record" "domain" {
   type    = "CNAME"
   zone_id = data.aws_route53_zone.zone.zone_id
   ttl     = 300
-  records = ["${aws_instance.SSH.public_dns}"]
+  records = ["${aws_instance.ssh.public_dns}"]
 }
 
 output "DNS" {
